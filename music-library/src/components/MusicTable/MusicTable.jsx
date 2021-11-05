@@ -5,7 +5,7 @@ const MusicTable = (props) => {
     console.log(props)
     return (
         <div className="container">
-        <table class="table table-dark">
+        <table className="table table-sm table-dark">
   <thead>
     <tr>
       <th scope="col">#</th>
