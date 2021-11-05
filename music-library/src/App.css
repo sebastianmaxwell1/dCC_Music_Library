@@ -1,0 +1,7 @@
+body{
+    background-image: url("./Assets/musicbg.jpg");
+    height: 100vh;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
