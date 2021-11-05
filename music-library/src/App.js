@@ -1,7 +1,5 @@
 import React, { Component } from 'react';
-// import { Router, Routes, Route } from 'react-router-dom';
 import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
-
 import NavigationBar from './components/NavigationBar/NavigationBar';
 import Songs from './Pages/Songs/Songs';
 import Album from './Pages/Album/Album';
