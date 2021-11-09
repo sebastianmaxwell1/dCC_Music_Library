@@ -6,16 +6,18 @@ import Album from './Pages/Album/Album';
 import Artist from './Pages/Artist/Artist';
 import Genre from './Pages/Genre/Genre';
 import MusicTable from './components/MusicTable/MusicTable';
-import Music from './components/Music';
+import Music from './components/Music/Music';
 import axios from 'axios';
 import './App.css';
+import AddSong from './components/AddSong/AddSong';
 
 
 
 
 class App extends Component {
   state = {
-    songs:[]
+    songs:[],
+    userInput: ''
   }
 
   componentDidMount() {
@@ -28,6 +30,32 @@ class App extends Component {
       songs: res.data
     });
   }
+
+
+mapSongs(){
+  return this.state.songs.map(song =>
+      <Music
+          key={song.id}
+          song={song}
+          deleteSongs={(id) => this.deleteSongs(id)}
+      />,
+  );
+}
+
+async addSong(song){
+  console.log(song)
+  try{
+      let res = await axios.post('http://www.devcodecampmusiclibrary.com/', song);
+      alert('Song Added!')
+      this.setState({
+          song:res.data
+      });
+  }
+  catch(e){
+      console.log(e.message)
+  }
+
+}
 
 
 
@@ -44,7 +72,9 @@ class App extends Component {
         <Route exact path='/genre' component={Genre} />
       </Routes>
     </Router>
-     <MusicTable />
+
+    <AddSong addSong={this.addSong.bind(this)}/>
+     <MusicTable mapSongs={() => this.mapSongs()} />
  
 
 
