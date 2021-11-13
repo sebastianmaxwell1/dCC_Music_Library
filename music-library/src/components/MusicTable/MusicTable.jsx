@@ -5,7 +5,10 @@ const MusicTable = (props) => {
     console.log(props)
     return (
         <div className="container">
-        <table className="table table-sm table-dark">
+          <ul>
+            {props.songs.map((song, index)=> <li>{song.title}</li>)}
+          </ul>
+        {/* <table className="table table-sm table-dark">
   <thead>
     <tr>
       <th scope="col">#</th>
@@ -48,7 +51,7 @@ const MusicTable = (props) => {
       
     </tr>
   </tbody>
-</table>
+</table> */}
 </div>
 
 

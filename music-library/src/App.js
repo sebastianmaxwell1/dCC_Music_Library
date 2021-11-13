@@ -25,7 +25,7 @@ class App extends Component {
   }
 
   async getAllMusic() {
-    let res = await axios.get('http://www.devcodecampmusiclibrary.com/')
+    let res = await axios.get('http://localhost:5000/api/songs')
     this.setState({
       songs: res.data
     });
@@ -45,7 +45,7 @@ mapSongs(){
 async addSong(song){
   console.log(song)
   try{
-      let res = await axios.post('http://www.devcodecampmusiclibrary.com/', song);
+      let res = await axios.post('http://localhost:5000/api/songs', song);
       alert('Song Added!')
       this.setState({
           song:res.data
@@ -74,7 +74,7 @@ async addSong(song){
     </Router>
 
     <AddSong addSong={this.addSong.bind(this)}/>
-     <MusicTable mapSongs={() => this.mapSongs()} />
+     <MusicTable songs = {this.state.songs} />
  
 
 
