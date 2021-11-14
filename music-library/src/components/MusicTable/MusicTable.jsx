@@ -5,53 +5,39 @@ const MusicTable = (props) => {
     console.log(props)
     return (
         <div className="container">
-          <ul>
-            {props.songs.map((song, index)=> <li>{song.title}</li>)}
-          </ul>
-        {/* <table className="table table-sm table-dark">
+          {/* <ul> */}
+            {/* {props.songs.map((song, index)=> <li>{song.title}</li>)} */}
+            {/* {props.songs.map((song, index)=> <li>{song.artist}</li>)} */}
+            {/* {props.songs.map((song, index)=> <li>{song.album}</li>)} */}
+            {/* {props.songs.map((song, index)=> <li>{song.genre}</li>)} */}
+            {/* {props.songs.map((song, index)=> <li>{song.releaseDate}</li>)} */}
+          {/* </ul> */}
+        <table className="table table-sm table-dark">
   <thead>
     <tr>
       <th scope="col">#</th>
       <th scope="col">Song</th>
       <th scope="col">Album</th>
       <th scope="col">Artist</th>
-      <th scope="col">Release Date</th>
       <th scope="col">Genre</th>
+      <th scope="col">Release Date</th>
     </tr>
   </thead>
   <tbody>
     <tr>
-      <th scope="row">1</th>
-      <td>n/a</td>
-      <td>n/a</td>
-      <td>n/a</td>
-      <td>n/a</td>
-      <td>n/a</td>
+      <th scope="row"></th>
+      <td>{props.songs.map((song, index)=> <li>{song.title}</li>)}</td>
+      <td>{props.songs.map((song, index)=> <li>{song.album}</li>)}</td>
+      <td>{props.songs.map((song, index)=> <li>{song.artist}</li>)}</td>
+      <td>{props.songs.map((song, index)=> <li>{song.genre}</li>)}</td>
+      <td>{props.songs.map((song, index)=> <li>{song.releaseDate}</li>)}</td>
       
       
     </tr>
-    <tr>
-      <th scope="row">2</th>
-      <td>n/a</td>
-      <td>n/a</td>
-      <td>n/a</td>
-      <td>n/a</td>
-      <td>n/a</td>
+
       
-      
-    </tr>
-    <tr>
-      <th scope="row">3</th>
-      <td>n/a</td>
-      <td>n/a</td>
-      <td>n/a</td>
-      <td>n/a</td>
-      <td>n/a</td>
-      
-      
-    </tr>
   </tbody>
-</table> */}
+</table>
 </div>
 
 

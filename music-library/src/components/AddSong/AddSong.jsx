@@ -8,7 +8,8 @@ class AddSong extends Component {
             title: '',
             album: '',
             artist: '',
-            release_date: '',
+            genre:'',
+            releaseDate: '',
         }
         this.handleChange = this.handleChange.bind(this);
         this.handleSubmit = this.handleSubmit.bind(this);
@@ -25,14 +26,16 @@ class AddSong extends Component {
             title: this.state.title,
             album: this.state.album,
             artist: this.state.artist,
-            release_date: this.state.release_date,
+            genre: this.state.genre,
+            releaseDate: this.state.releaseDate,
     }
     this.props.addSong(song);
     this.setState({
         title: '',
         album: '',
         artist: '',
-        release_date: '',
+        genre:'',
+        releaseDate: '',
     });
 
 
@@ -61,9 +64,14 @@ class AddSong extends Component {
                             <input className="form-control" type='text' name='artist' value={this.state.artist}
                             onChange={this.handleChange} />
                         </div>
+                        <div className='col-sm-4'>
+                            <label>Genre</label>
+                            <input className="form-control" type='text' name='genre' value={this.state.genre}
+                            onChange={this.handleChange} />
+                        </div>
                             <div className='col-sm-4'>
                             <label>Release Date</label>
-                            <input className="form-control" type='date' name='release_date' value={this.state.release_date}
+                            <input className="form-control" type='date' name='releaseDate' value={this.state.releaseDate}
                             onChange={this.handleChange} />
                         </div>
                             <div className='col mt-3'>
