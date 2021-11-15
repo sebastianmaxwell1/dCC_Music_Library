@@ -3,15 +3,10 @@ import React from 'react'
 
 const MusicTable = (props) => {
     console.log(props)
+    
     return (
         <div className="container">
-          {/* <ul> */}
-            {/* {props.songs.map((song, index)=> <li>{song.title}</li>)} */}
-            {/* {props.songs.map((song, index)=> <li>{song.artist}</li>)} */}
-            {/* {props.songs.map((song, index)=> <li>{song.album}</li>)} */}
-            {/* {props.songs.map((song, index)=> <li>{song.genre}</li>)} */}
-            {/* {props.songs.map((song, index)=> <li>{song.releaseDate}</li>)} */}
-          {/* </ul> */}
+
         <table className="table table-sm table-dark">
   <thead>
     <tr>
@@ -21,17 +16,18 @@ const MusicTable = (props) => {
       <th scope="col">Artist</th>
       <th scope="col">Genre</th>
       <th scope="col">Release Date</th>
+      <th scope="col">Edit / Delete Song</th>
     </tr>
   </thead>
   <tbody>
     <tr>
-      <th scope="row"></th>
+      <th scope="row"></th> 
       <td>{props.songs.map((song, index)=> <li>{song.title}</li>)}</td>
       <td>{props.songs.map((song, index)=> <li>{song.album}</li>)}</td>
       <td>{props.songs.map((song, index)=> <li>{song.artist}</li>)}</td>
       <td>{props.songs.map((song, index)=> <li>{song.genre}</li>)}</td>
       <td>{props.songs.map((song, index)=> <li>{song.releaseDate}</li>)}</td>
-      
+      <td><button onClick={() => props.deleteSongs(props.songs.id)}>Delete song </button>  </td>   
       
     </tr>
 
